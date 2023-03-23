@@ -139,3 +139,14 @@
 	
   <%= f.submit 'Create Book' %>
 <% end %>
+
+<div class="flash-notifications">
+  <% flash.each do |key, value| %>
+   <%= content_tag(:div, value, class: key) %>
+  <% end %>
+</div>
+# ↑ コピペ以上 ↑
+
+<div class='main'>
+  # 省略
+</div>

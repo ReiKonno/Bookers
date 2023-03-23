@@ -11,7 +11,7 @@ class ListsController < ApplicationController
     # 3. データをデータベースに保存するためのsaveメソッド実行
     list.save
     # 4. トップ画面へリダイレクト
-    redirect_to list_path(list.id)
+    redirect_to list_path(list.id) , notice: '投稿に成功しました'
   end
 
   def index
@@ -35,7 +35,7 @@ class ListsController < ApplicationController
   def destroy
     list = List.find(params[:id])
     list.destroy 
-    redirect_to '/lists'
+    redirect_to '/lists' , alert: '投稿を削除しました'
   end
   
   private
