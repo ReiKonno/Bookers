@@ -129,6 +129,14 @@
 </table>
 
 <h2>New book</h2>
+<% if @list.errors.any? %>
+  <%= @list.errors.count %>件のエラーが発生しました
+  <ul>
+    <% @list.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
 <!-- form_with部分 -->
 <%= form_with model: @list, url: '/lists', method: :post do |f| %>
   <h4>Title</h4>
@@ -145,8 +153,8 @@
    <%= content_tag(:div, value, class: key) %>
   <% end %>
 </div>
-# ↑ コピペ以上 ↑
+
 
 <div class='main'>
-  # 省略
+  
 </div>
